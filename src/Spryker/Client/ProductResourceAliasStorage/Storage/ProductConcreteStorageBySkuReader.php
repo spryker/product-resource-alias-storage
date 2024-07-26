@@ -82,7 +82,7 @@ class ProductConcreteStorageBySkuReader implements ProductConcreteStorageReaderI
     {
         $synchronizationDataTransfer = new SynchronizationDataTransfer();
         $synchronizationDataTransfer
-            ->setReference($productConcreteId)
+            ->setReference((string)$productConcreteId)
             ->setLocale($localeName);
 
         return $this->synchronizationService
