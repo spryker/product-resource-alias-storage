@@ -62,6 +62,31 @@ class ProductConcreteStorageBySkuReader implements ProductConcreteStorageReaderI
             return null;
         }
 
-        return $this->storageClient->get($mappingResource['key']);
+        $productConcreteId = $mappingResource['id'] ?? null;
+        if (!$productConcreteId) {
+            return null;
+        }
+
+        $key = $this->getProductConcreteStorageResourceKey($productConcreteId, $localeName);
+
+        return $this->storageClient->get($key);
+    }
+
+    /**
+     * @param int $productConcreteId
+     * @param string $localeName
+     *
+     * @return string
+     */
+    protected function getProductConcreteStorageResourceKey(int $productConcreteId, string $localeName): string
+    {
+        $synchronizationDataTransfer = new SynchronizationDataTransfer();
+        $synchronizationDataTransfer
+            ->setReference($productConcreteId)
+            ->setLocale($localeName);
+
+        return $this->synchronizationService
+            ->getStorageKeyBuilder(ProductStorageConstants::PRODUCT_CONCRETE_RESOURCE_NAME)
+            ->generateKey($synchronizationDataTransfer);
     }
 }
