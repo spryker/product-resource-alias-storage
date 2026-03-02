@@ -21,9 +21,6 @@ class ProductAbstractBulkStorageReader implements ProductAbstractBulkStorageRead
      */
     protected $productStorageClient;
 
-    /**
-     * @param \Spryker\Client\ProductResourceAliasStorage\Dependency\Client\ProductResourceAliasStorageToProductStorageClientInterface $productStorageClient
-     */
     public function __construct(ProductResourceAliasStorageToProductStorageClientInterface $productStorageClient)
     {
         $this->productStorageClient = $productStorageClient;

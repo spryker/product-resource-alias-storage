@@ -29,10 +29,6 @@ class ProductConcreteStorageBySkuReader implements ProductConcreteStorageReaderI
      */
     protected $synchronizationService;
 
-    /**
-     * @param \Spryker\Client\ProductResourceAliasStorage\Dependency\Client\ProductResourceAliasStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\ProductResourceAliasStorage\Dependency\Service\ProductResourceAliasStorageToSynchronizationServiceInterface $synchronizationService
-     */
     public function __construct(
         ProductResourceAliasStorageToStorageClientInterface $storageClient,
         ProductResourceAliasStorageToSynchronizationServiceInterface $synchronizationService
@@ -72,12 +68,6 @@ class ProductConcreteStorageBySkuReader implements ProductConcreteStorageReaderI
         return $this->storageClient->get($key);
     }
 
-    /**
-     * @param int $productConcreteId
-     * @param string $localeName
-     *
-     * @return string
-     */
     protected function getProductConcreteStorageResourceKey(int $productConcreteId, string $localeName): string
     {
         $synchronizationDataTransfer = new SynchronizationDataTransfer();

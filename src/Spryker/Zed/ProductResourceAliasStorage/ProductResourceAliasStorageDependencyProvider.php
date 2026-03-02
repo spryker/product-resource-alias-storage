@@ -45,11 +45,6 @@ class ProductResourceAliasStorageDependencyProvider extends AbstractBundleDepend
      */
     public const PROPEL_QUERY_PRODUCT_CONCRETE_STORAGE = 'PROPEL_QUERY_PRODUCT_CONCRETE_STORAGE';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $this->addEventBehaviorFacade($container);
@@ -57,11 +52,6 @@ class ProductResourceAliasStorageDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function providePersistenceLayerDependencies(Container $container): Container
     {
         $this->addProductAbstractPropelQuery($container);
@@ -72,11 +62,6 @@ class ProductResourceAliasStorageDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addEventBehaviorFacade(Container $container): Container
     {
         $container->set(static::FACADE_EVENT_BEHAVIOR, function (Container $container) {
@@ -86,11 +71,6 @@ class ProductResourceAliasStorageDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_PRODUCT, $container->factory(function () {
@@ -100,11 +80,6 @@ class ProductResourceAliasStorageDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductAbstractPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_PRODUCT_ABSTRACT, $container->factory(function () {
@@ -114,11 +89,6 @@ class ProductResourceAliasStorageDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductAbstractStoragePropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_PRODUCT_ABSTRACT_STORAGE, $container->factory(function () {
@@ -128,11 +98,6 @@ class ProductResourceAliasStorageDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductConcreteStoragePropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_PRODUCT_CONCRETE_STORAGE, $container->factory(function () {

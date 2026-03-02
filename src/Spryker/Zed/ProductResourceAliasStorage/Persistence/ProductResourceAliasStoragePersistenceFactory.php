@@ -21,33 +21,21 @@ use Spryker\Zed\ProductResourceAliasStorage\ProductResourceAliasStorageDependenc
  */
 class ProductResourceAliasStoragePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\Product\Persistence\SpyProductQuery
-     */
     public function getProductPropelQuery(): SpyProductQuery
     {
         return $this->getProvidedDependency(ProductResourceAliasStorageDependencyProvider::PROPEL_QUERY_PRODUCT);
     }
 
-    /**
-     * @return \Orm\Zed\Product\Persistence\SpyProductAbstractQuery
-     */
     public function getProductAbstractPropelQuery(): SpyProductAbstractQuery
     {
         return $this->getProvidedDependency(ProductResourceAliasStorageDependencyProvider::PROPEL_QUERY_PRODUCT_ABSTRACT);
     }
 
-    /**
-     * @return \Orm\Zed\ProductStorage\Persistence\SpyProductAbstractStorageQuery
-     */
     public function getProductAbstractStoragePropelQuery(): SpyProductAbstractStorageQuery
     {
         return $this->getProvidedDependency(ProductResourceAliasStorageDependencyProvider::PROPEL_QUERY_PRODUCT_ABSTRACT_STORAGE);
     }
 
-    /**
-     * @return \Orm\Zed\ProductStorage\Persistence\SpyProductConcreteStorageQuery
-     */
     public function getProductConcreteStoragePropelQuery(): SpyProductConcreteStorageQuery
     {
         return $this->getProvidedDependency(ProductResourceAliasStorageDependencyProvider::PROPEL_QUERY_PRODUCT_CONCRETE_STORAGE);

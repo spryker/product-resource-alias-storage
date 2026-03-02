@@ -50,9 +50,6 @@ class ProductResourceAliasStorageClientTest extends Unit
      */
     protected ProductResourceAliasStorageClientInterface $productResourceAliasStorageClient;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -61,9 +58,6 @@ class ProductResourceAliasStorageClientTest extends Unit
         $this->mockSynchronizationService();
     }
 
-    /**
-     * @return void
-     */
     public function testGetProductConcreteStorageDataBySkuReturnsProductConcreteStorageDataWhenSkuAndLocaleExist(): void
     {
         // Arrange
@@ -90,9 +84,6 @@ class ProductResourceAliasStorageClientTest extends Unit
         $this->assertEquals($productConcreteStorageData, $result);
     }
 
-    /**
-     * @return void
-     */
     public function testGetProductConcreteStorageDataBySkuReturnsNullWhenMappingResourceIsNotFound(): void
     {
         // Arrange
@@ -109,9 +100,6 @@ class ProductResourceAliasStorageClientTest extends Unit
         $this->assertNull($result);
     }
 
-    /**
-     * @return void
-     */
     public function testGetProductConcreteStorageDataBySkuReturnsNullWhenProductConcreteIdIsMissingInMappingResource(): void
     {
         // Arrange
@@ -129,9 +117,6 @@ class ProductResourceAliasStorageClientTest extends Unit
         $this->assertNull($result);
     }
 
-    /**
-     * @return void
-     */
     protected function mockSynchronizationService(): void
     {
         $synchronizationServiceMock = $this->createMock(ProductResourceAliasStorageToSynchronizationServiceInterface::class);

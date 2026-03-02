@@ -28,10 +28,6 @@ class ProductAbstractStorageWriter implements ProductAbstractStorageWriterInterf
      */
     protected $entityManager;
 
-    /**
-     * @param \Spryker\Zed\ProductResourceAliasStorage\Persistence\ProductResourceAliasStorageRepositoryInterface $repository
-     * @param \Spryker\Zed\ProductResourceAliasStorage\Persistence\ProductResourceAliasStorageEntityManagerInterface $entityManager
-     */
     public function __construct(
         ProductResourceAliasStorageRepositoryInterface $repository,
         ProductResourceAliasStorageEntityManagerInterface $entityManager
@@ -66,11 +62,6 @@ class ProductAbstractStorageWriter implements ProductAbstractStorageWriterInterf
         }
     }
 
-    /**
-     * @param \Orm\Zed\ProductStorage\Persistence\SpyProductAbstractStorage $productAbstractStorageEntity
-     *
-     * @return void
-     */
     protected function unpublishProductStorageMappingResource(SpyProductAbstractStorage $productAbstractStorageEntity): void
     {
         $productAbstractStorageEntity->syncUnpublishedMessageForMappingResource();

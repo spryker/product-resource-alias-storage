@@ -36,11 +36,6 @@ class ProductResourceAliasStorageEventSubscriber extends AbstractPlugin implemen
         return $eventCollection;
     }
 
-    /**
-     * @param \Spryker\Zed\Event\Dependency\EventCollectionInterface $eventCollection
-     *
-     * @return void
-     */
     protected function addProductAbstractMappingResourceStorageListener(EventCollectionInterface $eventCollection): void
     {
         $eventCollection->addListenerQueued(ProductEvents::PRODUCT_ABSTRACT_PUBLISH, new ProductAbstractMappingResourceStorageListener());
@@ -48,11 +43,6 @@ class ProductResourceAliasStorageEventSubscriber extends AbstractPlugin implemen
         $eventCollection->addListenerQueued(ProductEvents::ENTITY_SPY_PRODUCT_ABSTRACT_UPDATE, new ProductAbstractMappingResourceStorageListener());
     }
 
-    /**
-     * @param \Spryker\Zed\Event\Dependency\EventCollectionInterface $eventCollection
-     *
-     * @return void
-     */
     protected function addProductConcreteMappingResourceStorageListener(EventCollectionInterface $eventCollection): void
     {
         $eventCollection->addListenerQueued(ProductEvents::PRODUCT_CONCRETE_PUBLISH, new ProductConcreteMappingResourceStorageListener());

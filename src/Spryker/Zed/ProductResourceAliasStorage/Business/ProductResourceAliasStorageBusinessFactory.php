@@ -21,9 +21,6 @@ use Spryker\Zed\ProductResourceAliasStorage\Business\ProductStorage\ProductConcr
  */
 class ProductResourceAliasStorageBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ProductResourceAliasStorage\Business\ProductStorage\ProductAbstractStorageWriterInterface
-     */
     public function createProductAbstractStorageWriter(): ProductAbstractStorageWriterInterface
     {
         return new ProductAbstractStorageWriter(
@@ -32,9 +29,6 @@ class ProductResourceAliasStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductResourceAliasStorage\Business\ProductStorage\ProductConcreteStorageWriterInterface
-     */
     public function createProductConcreteStorageWriter(): ProductConcreteStorageWriterInterface
     {
         return new ProductConcreteStorageWriter(

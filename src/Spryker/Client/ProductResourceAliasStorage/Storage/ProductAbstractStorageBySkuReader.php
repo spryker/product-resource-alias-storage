@@ -35,11 +35,6 @@ class ProductAbstractStorageBySkuReader implements ProductAbstractStorageReaderI
      */
     protected $storeClient;
 
-    /**
-     * @param \Spryker\Client\ProductResourceAliasStorage\Dependency\Client\ProductResourceAliasStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\ProductResourceAliasStorage\Dependency\Service\ProductResourceAliasStorageToSynchronizationServiceInterface $synchronizationService
-     * @param \Spryker\Client\ProductResourceAliasStorage\Dependency\Client\ProductResourceAliasStorageToStoreClientInterface $storeClient
-     */
     public function __construct(
         ProductResourceAliasStorageToStorageClientInterface $storageClient,
         ProductResourceAliasStorageToSynchronizationServiceInterface $synchronizationService,

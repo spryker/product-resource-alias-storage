@@ -29,9 +29,6 @@ class ProductResourceAliasStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ProductResourceAliasStorage\Storage\ProductAbstractBulkStorageReaderInterface
-     */
     public function createProductAbstractBulkStorageReader(): ProductAbstractBulkStorageReaderInterface
     {
         return new ProductAbstractBulkStorageReader($this->getProductStorageClient());
@@ -56,9 +53,6 @@ class ProductResourceAliasStorageFactory extends AbstractFactory
         return $this->getProvidedDependency(ProductResourceAliasStorageDependencyProvider::CLIENT_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Client\ProductResourceAliasStorage\Dependency\Client\ProductResourceAliasStorageToProductStorageClientInterface
-     */
     protected function getProductStorageClient(): ProductResourceAliasStorageToProductStorageClientInterface
     {
         return $this->getProvidedDependency(ProductResourceAliasStorageDependencyProvider::CLIENT_PRODUCT_STORAGE);
@@ -72,9 +66,6 @@ class ProductResourceAliasStorageFactory extends AbstractFactory
         return $this->getProvidedDependency(ProductResourceAliasStorageDependencyProvider::SERVICE_SYNCHRONIZATION);
     }
 
-    /**
-     * @return \Spryker\Client\ProductResourceAliasStorage\Dependency\Client\ProductResourceAliasStorageToStoreClientInterface
-     */
     public function getStoreClient(): ProductResourceAliasStorageToStoreClientInterface
     {
         return $this->getProvidedDependency(ProductResourceAliasStorageDependencyProvider::CLIENT_STORE);
